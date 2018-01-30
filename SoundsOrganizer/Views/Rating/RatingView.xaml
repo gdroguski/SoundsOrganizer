@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="SoundsOrganizer.Views.Rating.RatingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:rating="clr-namespace:SoundsOrganizer.Views.Rating"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="603.339"
+             DataContext="{Binding Path=RatingViewModel, Source={StaticResource ViewModelLocator}}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".5*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".5*" />
+            <RowDefinition Height=".5*" />
+            <RowDefinition Height="4.5*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="0" Grid.Row="0" Text="Burp" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Column="1" Grid.Row="0" Text="Loudness" TextAlignment="Center" Margin="10,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Column="2" Grid.Row="0" Text="Length" TextAlignment="Center" Margin="10,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Column="3" Grid.Row="0" Text="Pitch" TextAlignment="Center" Margin="22,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Column="4" Grid.Row="0" Text="Humidity" TextAlignment="Center" Margin="10,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Column="5" Grid.Row="0" Text="Breaks" TextAlignment="Center" Margin="10,0"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Column="6" Grid.Row="0" Text="Burpage" TextAlignment="Center" Margin="11,6,16,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <TextBlock Grid.Column="0" Grid.Row="1" Text="Rating:" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Height="20" Width="42" Text="{Binding ElementName=LoudnessSlider, Path=Value, UpdateSourceTrigger=PropertyChanged,StringFormat={}{0:0.#00}}" Margin="20,0,28,0" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox Grid.Column="2" Grid.Row="1" Height="20" Width="42" Text="{Binding ElementName=LengthSlider, Path=Value, UpdateSourceTrigger=PropertyChanged,StringFormat={}{0:0.#00}}" Margin="27,0,28,0" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox Grid.Column="3" Grid.Row="1" Height="20" Width="42" Text="{Binding ElementName=PitchSlider, Path=Value, UpdateSourceTrigger=PropertyChanged,StringFormat={}{0:0.#00}}" Margin="28,0" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox Grid.Column="4" Grid.Row="1" Height="20" Width="42" Text="{Binding ElementName=HumiditySlider, Path=Value, UpdateSourceTrigger=PropertyChanged,StringFormat={}{0:0.#00}}" Margin="29,0,27,0" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox Grid.Column="5" Grid.Row="1" Height="20" Width="42" Text="{Binding ElementName=BreaksCountSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Margin="29,0,26,0" TextAlignment="Center" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox Grid.Column="6" Grid.Row="1" Height="20" Width="42" Text="{Binding ElementName=BurpageSlider, Path=Value, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:0.#00}}" Margin="14,4,16,4" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <rating:RatingControllerView Grid.Column="0" Grid.Row="2"/>
+        <Slider Grid.Column="1" Grid.Row="2"  Maximum="1" Minimum="0" TickFrequency=".1" Value="{Binding Loudness, Delay=500}" Width="30" x:Name="LoudnessSlider" RenderTransformOrigin="0.5,0.5" Margin="24,25,31,10" Orientation="Vertical" HorizontalAlignment="Center" TickPlacement="TopLeft"/>
+        <Slider Grid.Column="2" Grid.Row="2"  Maximum="1" Minimum="0" TickFrequency=".1"  Value="{Binding Length, Delay=500}"  Width="30" x:Name="LengthSlider" RenderTransformOrigin="0.5,0.5" Margin="27,19,28,4" Orientation="Vertical" TickPlacement="TopLeft" HorizontalAlignment="Center"/>
+        <Slider Grid.Column="3" Grid.Row="2"  Maximum="1" Minimum="0" TickFrequency=".1"  Value="{Binding Pitch, Delay=500}" Width="30" x:Name="PitchSlider" RenderTransformOrigin="0.5,0.5" Margin="28,19,28,5" Orientation="Vertical" TickPlacement="TopLeft" HorizontalAlignment="Center"/>
+        <Slider Grid.Column="4" Grid.Row="2"  Maximum="1" Minimum="0" TickFrequency=".1"  Value="{Binding Humidity, Delay=500}" Width="30" x:Name="HumiditySlider" RenderTransformOrigin="0.5,0.5" Margin="29,25,27,10" Orientation="Vertical" TickPlacement="TopLeft" HorizontalAlignment="Center"/>
+        <Slider Grid.Column="5" Grid.Row="2"  Maximum="20" Minimum="0" TickFrequency="1"  Value="{Binding BreaksCount, Delay=500}" Width="30" x:Name="BreaksCountSlider" IsSnapToTickEnabled="True"  RenderTransformOrigin="0.5,0.5" Margin="30,18,25,8" Orientation="Vertical" TickPlacement="TopLeft" SmallChange="1" HorizontalAlignment="Center"/>
+        <Slider Grid.Column="6" Grid.Row="2"  Maximum="1" Minimum="0" TickFrequency=".1" Value="{Binding Burpage, Delay=500}" Width="34" x:Name="BurpageSlider" RenderTransformOrigin="0.5,0.5" Margin="0,25,9,10" Orientation="Vertical" HorizontalAlignment="Center" TickPlacement="TopLeft"/>
+    </Grid>
+
+</UserControl>
+

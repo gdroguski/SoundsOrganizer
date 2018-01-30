@@ -1,0 +1,9 @@
+﻿<Application x:Class="SoundsOrganizer.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:dependencyInjection="clr-namespace:SoundsOrganizer.Logic.DependencyInjection"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <dependencyInjection:ViewModelLocator x:Key="ViewModelLocator"/>
+    </Application.Resources>
+</Application>

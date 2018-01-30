@@ -1,0 +1,43 @@
+﻿<Window x:Class="SoundsOrganizer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:presentation="clr-namespace:SoundsOrganizer.Views.Presentation"
+        xmlns:recording="clr-namespace:SoundsOrganizer.Views.Recording"
+        xmlns:ui="clr-namespace:SoundsOrganizer.Views.UI"
+        xmlns:rating="clr-namespace:SoundsOrganizer.Views.Rating"
+        mc:Ignorable="d"
+        Title="Sounds organizer" Height="841.178" Width="1169.597">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="700*"/>
+            <ColumnDefinition Width="350*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <presentation:VisualisationView Grid.Column="0" Grid.Row="0" Margin="10" />
+        <GridSplitter Width="2" Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Right" VerticalAlignment="Stretch" ResizeBehavior="CurrentAndNext" Background="#FFBCBCBC" Margin="0,10,0,0"/>
+        <recording:WasapiCaptureView Grid.Column="1" Grid.Row="0" Margin="14,10,10,10"/>
+
+        <GridSplitter Height="2" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" ResizeBehavior="CurrentAndNext" Background="#FFBCBCBC" Margin="10,0,0,0"/>
+        <rating:RatingView Grid.Column="0" Grid.Row="1" Margin="10"/>
+        <Grid Grid.Column="1" Grid.Row="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="6*"/>
+            </Grid.RowDefinitions>
+            <recording:RecordingsView Grid.Row="1"/>
+            <ui:AudioPlayerView Grid.Row="0" Margin="10"/>
+        </Grid>
+    </Grid>
+
+</Window>
+
+
+
