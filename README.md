@@ -1,5 +1,3 @@
-# README #
-
 # Sound Organizer
 
 The aim of this project was to made an easy to use C# application enabling recording, playing and saving user's microphone input with availability to add label for that data. It's made using MVVM pattern within the WPF application and consists of the displaying,files and labels managing, recording and playing layers. 
@@ -12,7 +10,7 @@ Primarily it was made to handle user's digestion sounds to make a labeled databa
 * Breaks
 * Burpage (personal rating to prevent making prediction for fake burps)
   
-Most of them are self-explanatory and except the Breaks label which is counting one, can achieve value within unit interval. One can record, play the recording within the player and decide whether to create labels or not. The recordings by default are saved within Recordings folder and labels with their corresponding values in Ratings folder with an appropriate names. It's possible to change the recording specifications such as Sample Rate, Bit Depth or just microphone's sensitivity. I also added the availability of visual representation of the wav file for maybe some potential future relationships within data. 
+Most of them are self-explanatory and except the *Breaks* label which is a counting one, can achieve value within unit interval. One can record, play the recording within the player and decide whether to create labels or not. The recordings by default are saved within *Recordings* folder and labels with their corresponding values in *Ratings* folder with an appropriate names. It's possible to change the recording specifications such as *Sample Rate*, *Bit Depth* or just microphone's sensitivity. I also added the availability of visual representation of the wav file for maybe some potential future relationships within data. 
 
 
 Example usage of the application:
@@ -21,4 +19,4 @@ Example usage of the application:
 ![Alt text](https://bytebucket.org/groguski/soundsorganizer/raw/3306bcedece84a6a56124da593ffa14be89e0845/example.png )
 
 
-To make it better in terms of clean code in future I would move all strings into resources and also add the ability to change freely labels by user within GUI (their names, quantity and types).
+To make it better in terms of clean code in the future one would move all strings into resources and also add the ability to change freely labels by user within GUI (their names, quantity and types).
