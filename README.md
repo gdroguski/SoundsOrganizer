@@ -19,4 +19,4 @@ Example usage of the application:
 ![Alt text](https://bytebucket.org/groguski/soundsorganizer/raw/3306bcedece84a6a56124da593ffa14be89e0845/example.png )
 
 
-To make it better in terms of clean code in the future one would move all strings into resources and also add the ability to change freely labels by user within GUI (their names, quantity and types).
+To make it better in terms of clean code in the future it could be done to move all strings into resources and also add the ability to change freely labels by user within GUI (their names, quantity and types).
